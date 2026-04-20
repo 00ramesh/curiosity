@@ -1,8 +1,9 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import { GraduationCap, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -14,7 +15,6 @@ const links = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -23,13 +23,8 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => setOpen(false), [location.pathname]);
-
   return (
-    <motion.header
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-background/80 backdrop-blur-xl border-b border-border/60 shadow-soft"
@@ -37,17 +32,21 @@ const Navbar = () => {
       }`}
     >
       <nav className="container flex items-center justify-between h-20">
-        <Link to="/" className="flex items-center gap-3 group">
-          <motion.div
-            whileHover={{ rotate: 360 }}
-            transition={{ duration: 0.8 }}
-            className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-primary-glow grid place-items-center shadow-glow"
-          >
-            <GraduationCap className="w-6 h-6 text-primary-foreground" />
-          </motion.div>
+        <Link to="/" className="flex items-center gap-3 group" onClick={() => setOpen(false)}>
+          <motion.img
+            src={logo}
+            alt="Curiosity Institute logo"
+            width={44}
+            height={44}
+            whileHover={{ rotate: [0, -8, 8, 0] }}
+            transition={{ duration: 0.6 }}
+            className="w-11 h-11 object-contain drop-shadow-[0_4px_12px_hsl(var(--primary)/0.4)]"
+          />
           <div className="leading-tight">
             <div className="font-bold text-lg tracking-tight">Curiosity</div>
-            <div className="text-xs text-muted-foreground -mt-0.5">Institute</div>
+            <div className="text-[10px] text-muted-foreground -mt-0.5 uppercase tracking-[0.18em]">
+              Institute
+            </div>
           </div>
         </Link>
 
@@ -107,6 +106,7 @@ const Navbar = () => {
                 <NavLink
                   to={l.to}
                   end={l.to === "/"}
+                  onClick={() => setOpen(false)}
                   className={({ isActive }) =>
                     `block px-4 py-3 rounded-lg text-sm font-medium ${
                       isActive ? "bg-primary/10 text-primary" : "text-foreground/80"
@@ -119,13 +119,13 @@ const Navbar = () => {
             ))}
             <li className="pt-2">
               <Button asChild variant="hero" className="w-full">
-                <Link to="/contact">Contact Us</Link>
+                <Link to="/contact" onClick={() => setOpen(false)}>Contact Us</Link>
               </Button>
             </li>
           </ul>
         </motion.div>
       )}
-    </motion.header>
+    </header>
   );
 };
 
