@@ -31,16 +31,16 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <nav className="container flex items-center justify-between h-20">
-        <Link to="/" className="flex items-center gap-3 group" onClick={() => setOpen(false)}>
+      <nav className="container flex items-center justify-between h-16">
+        <Link to="/" className="flex items-center gap-2.5 group" onClick={() => setOpen(false)}>
           <motion.img
             src={logo}
             alt="Curiosity Institute logo"
-            width={44}
-            height={44}
+            width={36}
+            height={36}
             whileHover={{ rotate: [0, -8, 8, 0] }}
             transition={{ duration: 0.6 }}
-            className="w-11 h-11 object-contain drop-shadow-[0_4px_12px_hsl(var(--primary)/0.4)]"
+            className="w-9 h-9 object-contain drop-shadow-[0_4px_12px_hsl(var(--primary)/0.4)]"
           />
           <div className="leading-tight">
             <div className="font-bold text-lg tracking-tight">Curiosity</div>

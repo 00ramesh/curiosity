@@ -11,7 +11,7 @@ const Layout = ({ children }: { children: ReactNode }) => (
       <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] rounded-full bg-accent/10 blur-[120px]" />
     </div>
     <Navbar />
-    <main className="flex-1 pt-20">{children}</main>
+    <main className="flex-1 pt-16">{children}</main>
     <Footer />
   </div>
 );

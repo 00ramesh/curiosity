@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+
 import FloatingDoodles from "@/components/FloatingDoodles";
 import Reveal from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
@@ -27,7 +27,7 @@ const Contact = () => {
   };
 
   return (
-    <Layout>
+    <>
       <section className="relative bg-hero py-20 overflow-hidden">
         <FloatingDoodles />
         <div className="container relative text-center">
@@ -164,7 +164,7 @@ const Contact = () => {
           </form>
         </Reveal>
       </section>
-    </Layout>
+    </>
   );
 };
 

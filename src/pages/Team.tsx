@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+
 import FloatingDoodles from "@/components/FloatingDoodles";
 import Reveal from "@/components/Reveal";
 import { motion } from "framer-motion";
@@ -43,7 +43,7 @@ const team = [
 
 const Team = () => {
   return (
-    <Layout>
+    <>
       <section className="relative bg-hero py-20 overflow-hidden">
         <FloatingDoodles />
         <div className="container relative text-center">
@@ -87,7 +87,7 @@ const Team = () => {
           ))}
         </div>
       </section>
-    </Layout>
+    </>
   );
 };
 
