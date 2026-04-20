@@ -206,6 +206,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* TESTIMONIALS */}
+      <Testimonials />
+
       {/* CTA */}
       <section className="container py-20">
         <Reveal>
