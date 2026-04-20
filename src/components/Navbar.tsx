@@ -25,10 +25,10 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,backdrop-filter,border-color,box-shadow] duration-500 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border/60 shadow-soft"
-          : "bg-transparent"
+          ? "bg-background/75 backdrop-blur-xl border-b border-border/60 shadow-soft"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <nav className="container flex items-center justify-between h-16">
