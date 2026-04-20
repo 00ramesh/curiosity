@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import Testimonials from "@/components/Testimonials";
 import FloatingDoodles from "@/components/FloatingDoodles";
 import Reveal from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
@@ -34,7 +34,7 @@ const subjects = [
 
 const Index = () => {
   return (
-    <Layout>
+    <>
       {/* HERO */}
       <section className="relative min-h-[90vh] flex items-center bg-hero overflow-hidden">
         <FloatingDoodles />
@@ -229,7 +229,7 @@ const Index = () => {
           </div>
         </Reveal>
       </section>
-    </Layout>
+    </>
   );
 };
 
