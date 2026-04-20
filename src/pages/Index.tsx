@@ -70,9 +70,15 @@ const Index = () => {
               </div>
             </Reveal>
             <Reveal delay={0.4}>
-              <div className="mt-10 flex flex-wrap gap-6 text-sm">
-                <div><span className="text-primary font-bold text-2xl">📞</span> <span className="text-muted-foreground">8299281153</span></div>
-                <div className="hidden sm:block text-muted-foreground">institutecuriosity@gmail.com</div>
+              <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 text-sm">
+                <a href="tel:8299281153" className="inline-flex items-center gap-2.5 text-foreground/90 hover:text-primary transition-colors">
+                  <span className="w-9 h-9 rounded-lg bg-primary/15 border border-primary/30 grid place-items-center text-primary">📞</span>
+                  <span className="font-medium">8299281153</span>
+                </a>
+                <a href="mailto:institutecuriosity@gmail.com" className="inline-flex items-center gap-2.5 text-foreground/90 hover:text-primary transition-colors min-w-0">
+                  <span className="w-9 h-9 rounded-lg bg-primary/15 border border-primary/30 grid place-items-center text-primary">✉️</span>
+                  <span className="font-medium truncate">institutecuriosity@gmail.com</span>
+                </a>
               </div>
             </Reveal>
           </div>

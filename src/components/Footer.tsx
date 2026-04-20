@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { GraduationCap, Mail, Phone, MapPin, Facebook, Instagram, Youtube, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Youtube, Twitter } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -7,9 +8,7 @@ const Footer = () => {
       <div className="container py-14 grid gap-10 md:grid-cols-4">
         <div className="space-y-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-glow grid place-items-center shadow-glow">
-              <GraduationCap className="w-5 h-5 text-primary-foreground" />
-            </div>
+            <img src={logo} alt="Curiosity Institute logo" width={40} height={40} loading="lazy" className="w-10 h-10 object-contain" />
             <span className="font-bold text-lg">Curiosity Institute</span>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
