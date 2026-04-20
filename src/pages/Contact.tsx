@@ -28,7 +28,7 @@ const Contact = () => {
 
   return (
     <>
-      <section className="relative bg-hero py-20 overflow-hidden">
+      <section className="relative bg-hero pt-32 pb-20 overflow-hidden">
         <FloatingDoodles />
         <div className="container relative text-center">
           <Reveal>
