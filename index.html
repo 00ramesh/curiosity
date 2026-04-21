@@ -13,6 +13,22 @@
     <!-- If you have a real social preview image, set it here (absolute URL). -->
 
     <meta name="twitter:card" content="summary_large_image" />
+
+    <script>
+      // GitHub Pages SPA fallback support (used with public/404.html).
+      // If the user hits a deep link, Pages serves 404.html which stores the
+      // original URL in sessionStorage and redirects to the app root.
+      // This script restores the original path once the app loads.
+      (function () {
+        var redirect = sessionStorage.getItem("redirect");
+        if (redirect) {
+          sessionStorage.removeItem("redirect");
+          if (redirect !== window.location.href) {
+            window.history.replaceState(null, "", redirect);
+          }
+        }
+      })();
+    </script>
   </head>
 
   <body>
