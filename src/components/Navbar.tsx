@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -6,15 +6,16 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
 const links = [
-  { to: "/", label: "Home" },
-  { to: "/classes", label: "Classes" },
-  { to: "/team", label: "Our Team" },
-  { to: "/contact", label: "Contact" },
+  { to: "#home", label: "Home" },
+  { to: "#classes", label: "Classes" },
+  { to: "#team", label: "Our Team" },
+  { to: "#contact", label: "Contact" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<string>("#home");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -22,6 +23,38 @@ const Navbar = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    const ids = links.map((l) => l.to.slice(1));
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => !!el);
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActive("#" + visible.target.id);
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: [0, 0.25, 0.5, 1] }
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    e.preventDefault();
+    setOpen(false);
+    const id = hash.slice(1);
+    if (id === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    history.replaceState(null, "", hash === "#home" ? "/" : hash);
+  };
 
   return (
     <header
@@ -32,7 +65,7 @@ const Navbar = () => {
       }`}
     >
       <nav className="container flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-2.5 group" onClick={() => setOpen(false)}>
+        <Link to="/" className="flex items-center gap-2.5 group" onClick={(e) => handleNavClick(e as any, "#home")}>
           <motion.img
             src={logo}
             alt="Curiosity Institute logo"
@@ -51,37 +84,34 @@ const Navbar = () => {
         </Link>
 
         <ul className="hidden md:flex items-center gap-1">
-          {links.map((l) => (
-            <li key={l.to}>
-              <NavLink
-                to={l.to}
-                end={l.to === "/"}
-                className={({ isActive }) =>
-                  `relative px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
+          {links.map((l) => {
+            const isActive = active === l.to;
+            return (
+              <li key={l.to}>
+                <a
+                  href={l.to}
+                  onClick={(e) => handleNavClick(e, l.to)}
+                  className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
                     isActive ? "text-primary" : "text-foreground/70 hover:text-foreground"
-                  }`
-                }
-              >
-                {({ isActive }) => (
-                  <>
-                    {l.label}
-                    {isActive && (
-                      <motion.span
-                        layoutId="nav-active"
-                        className="absolute inset-0 -z-10 rounded-lg bg-primary/10 border border-primary/30"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                      />
-                    )}
-                  </>
-                )}
-              </NavLink>
-            </li>
-          ))}
+                  }`}
+                >
+                  {l.label}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-active"
+                      className="absolute inset-0 -z-10 rounded-lg bg-primary/10 border border-primary/30"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="hidden md:block">
           <Button asChild variant="hero" size="default">
-            <Link to="/contact">Contact Us</Link>
+            <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>Contact Us</a>
           </Button>
         </div>
 
@@ -101,25 +131,25 @@ const Navbar = () => {
           className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border"
         >
           <ul className="container py-4 flex flex-col gap-1">
-            {links.map((l) => (
-              <li key={l.to}>
-                <NavLink
-                  to={l.to}
-                  end={l.to === "/"}
-                  onClick={() => setOpen(false)}
-                  className={({ isActive }) =>
-                    `block px-4 py-3 rounded-lg text-sm font-medium ${
+            {links.map((l) => {
+              const isActive = active === l.to;
+              return (
+                <li key={l.to}>
+                  <a
+                    href={l.to}
+                    onClick={(e) => handleNavClick(e, l.to)}
+                    className={`block px-4 py-3 rounded-lg text-sm font-medium ${
                       isActive ? "bg-primary/10 text-primary" : "text-foreground/80"
-                    }`
-                  }
-                >
-                  {l.label}
-                </NavLink>
-              </li>
-            ))}
+                    }`}
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              );
+            })}
             <li className="pt-2">
               <Button asChild variant="hero" className="w-full">
-                <Link to="/contact" onClick={() => setOpen(false)}>Contact Us</Link>
+                <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>Contact Us</a>
               </Button>
             </li>
           </ul>
