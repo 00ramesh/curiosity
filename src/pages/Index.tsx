@@ -64,10 +64,10 @@ const Index = () => {
             <Reveal delay={0.3}>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Button asChild variant="hero" size="lg">
-                  <Link to="/classes">Explore Classes <ArrowRight className="w-4 h-4" /></Link>
+                  <a href="#classes">Explore Classes <ArrowRight className="w-4 h-4" /></a>
                 </Button>
                 <Button asChild variant="glass" size="lg">
-                  <Link to="/contact">Get in Touch</Link>
+                  <a href="#contact">Get in Touch</a>
                 </Button>
               </div>
             </Reveal>
@@ -224,12 +224,25 @@ const Index = () => {
               <p className="mt-4 text-primary-foreground/80 max-w-xl mx-auto">Talk to a mentor today. Admissions are open for all classes 1st to 8th.</p>
               <div className="mt-8 flex flex-wrap gap-4 justify-center">
                 <Button asChild variant="amber" size="lg">
-                  <Link to="/contact">Apply Now <ArrowRight className="w-4 h-4" /></Link>
+                  <a href="#contact">Apply Now <ArrowRight className="w-4 h-4" /></a>
                 </Button>
                 <Button asChild variant="glass" size="lg">
-                  <Link to="/team">Meet the Team</Link>
+                  <a href="#team">Meet the Team</a>
                 </Button>
               </div>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      <ClassesSection />
+      <TeamSection />
+      <ContactSection />
+    </>
+  );
+};
+
+export default Index;
             </div>
           </div>
         </Reveal>
