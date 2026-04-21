@@ -243,12 +243,4 @@ const Index = () => {
 };
 
 export default Index;
-            </div>
-          </div>
-        </Reveal>
-      </section>
-    </>
-  );
-};
-
 export default Index;
