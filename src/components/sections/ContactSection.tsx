@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, MessageCircle, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { useState, FormEvent } from "react";
 
 const PHONE = "8299281153";
@@ -19,11 +19,6 @@ const ContactSection = () => {
     window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
   };
 
-  const openWhatsApp = () => {
-    const text = encodeURIComponent("Hello Curiosity Institute, I'd like to know more about admissions.");
-    window.open(`https://wa.me/91${PHONE}?text=${text}`, "_blank");
-  };
-
   return (
     <section id="contact" className="container py-24 scroll-mt-20">
       <Reveal>
@@ -36,10 +31,10 @@ const ContactSection = () => {
         </div>
       </Reveal>
 
-      <div className="grid lg:grid-cols-5 gap-8">
-        <Reveal className="lg:col-span-2 space-y-4">
-          <motion.a href={`tel:${PHONE}`} whileHover={{ y: -4 }} className="flex items-center gap-4 bg-card-soft border border-border rounded-2xl p-5 hover:border-primary/50 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary-glow grid place-items-center shadow-glow">
+      <div className="grid lg:grid-cols-5 gap-8 items-stretch">
+        <Reveal className="lg:col-span-2 flex flex-col gap-4 h-full">
+          <motion.a href={`tel:${PHONE}`} whileHover={{ y: -4 }} className="flex-1 flex items-center gap-4 bg-card-soft border border-border rounded-2xl p-5 hover:border-primary/50 transition-colors">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary-glow grid place-items-center shadow-glow flex-shrink-0">
               <Phone className="w-5 h-5 text-primary-foreground" />
             </div>
             <div>
@@ -48,8 +43,8 @@ const ContactSection = () => {
             </div>
           </motion.a>
 
-          <motion.a href={`mailto:${EMAIL}`} whileHover={{ y: -4 }} className="flex items-center gap-4 bg-card-soft border border-border rounded-2xl p-5 hover:border-primary/50 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary-glow grid place-items-center shadow-glow">
+          <motion.a href={`mailto:${EMAIL}`} whileHover={{ y: -4 }} className="flex-1 flex items-center gap-4 bg-card-soft border border-border rounded-2xl p-5 hover:border-primary/50 transition-colors">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary-glow grid place-items-center shadow-glow flex-shrink-0">
               <Mail className="w-5 h-5 text-primary-foreground" />
             </div>
             <div className="min-w-0">
@@ -58,18 +53,8 @@ const ContactSection = () => {
             </div>
           </motion.a>
 
-          <motion.button onClick={openWhatsApp} whileHover={{ y: -4 }} className="w-full flex items-center gap-4 bg-card-soft border border-border rounded-2xl p-5 hover:border-accent/50 transition-colors text-left">
-            <div className="w-12 h-12 rounded-xl bg-accent grid place-items-center shadow-amber">
-              <MessageCircle className="w-5 h-5 text-accent-foreground" />
-            </div>
-            <div>
-              <div className="text-xs text-muted-foreground uppercase tracking-wider">WhatsApp</div>
-              <div className="font-semibold text-lg">Chat instantly</div>
-            </div>
-          </motion.button>
-
-          <motion.div whileHover={{ y: -4 }} className="flex items-start gap-4 bg-card-soft border border-border rounded-2xl p-5">
-            <div className="w-12 h-12 rounded-xl bg-secondary grid place-items-center">
+          <motion.div whileHover={{ y: -4 }} className="flex-1 flex items-center gap-4 bg-card-soft border border-border rounded-2xl p-5">
+            <div className="w-12 h-12 rounded-xl bg-secondary grid place-items-center flex-shrink-0">
               <MapPin className="w-5 h-5 text-primary" />
             </div>
             <div>
@@ -80,8 +65,8 @@ const ContactSection = () => {
           </motion.div>
         </Reveal>
 
-        <Reveal delay={0.2} className="lg:col-span-3">
-          <form onSubmit={handleSubmit} className="bg-card-soft border border-border rounded-3xl p-8 md:p-10 space-y-5 shadow-soft">
+        <Reveal delay={0.2} className="lg:col-span-3 h-full">
+          <form onSubmit={handleSubmit} className="h-full bg-card-soft border border-border rounded-3xl p-8 md:p-10 flex flex-col gap-5 shadow-soft">
             <div>
               <h3 className="text-2xl font-bold">Send a message</h3>
               <p className="text-sm text-muted-foreground mt-1">Fill the form — it will open your email app pre-filled.</p>
@@ -96,16 +81,13 @@ const ContactSection = () => {
                 <Input required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="you@example.com" className="bg-background/60 border-border h-12" />
               </div>
             </div>
-            <div>
+            <div className="flex-1 flex flex-col">
               <label className="text-sm font-medium mb-2 block">Message</label>
-              <Textarea required rows={6} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your child's class and what you're looking for..." className="bg-background/60 border-border" />
+              <Textarea required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your child's class and what you're looking for..." className="bg-background/60 border-border flex-1 min-h-[160px] resize-none" />
             </div>
             <div className="flex flex-wrap gap-3 pt-2">
               <Button type="submit" variant="hero" size="lg">
                 Send message <Send className="w-4 h-4" />
-              </Button>
-              <Button type="button" variant="glass" size="lg" onClick={openWhatsApp}>
-                Or WhatsApp us
               </Button>
             </div>
           </form>
