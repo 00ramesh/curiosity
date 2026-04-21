@@ -38,7 +38,7 @@ const Index = () => {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-[90vh] flex items-center bg-hero overflow-hidden">
+      <section id="home" className="relative min-h-[90vh] flex items-center bg-hero overflow-hidden scroll-mt-20">
         <FloatingDoodles />
         <div className="absolute inset-0 glow-ring" />
 

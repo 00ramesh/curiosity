@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Instagram, Youtube, Twitter } from "lucide-react";
 import logo from "@/assets/logo.png";
 
@@ -19,10 +18,10 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold mb-4">Explore</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/" className="hover:text-primary transition-colors">Home</Link></li>
-            <li><Link to="/classes" className="hover:text-primary transition-colors">Classes</Link></li>
-            <li><Link to="/team" className="hover:text-primary transition-colors">Our Team</Link></li>
-            <li><Link to="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
+            <li><a href="#home" className="hover:text-primary transition-colors">Home</a></li>
+            <li><a href="#classes" className="hover:text-primary transition-colors">Classes</a></li>
+            <li><a href="#team" className="hover:text-primary transition-colors">Our Team</a></li>
+            <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
           </ul>
         </div>
 
