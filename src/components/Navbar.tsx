@@ -64,8 +64,8 @@ const Navbar = () => {
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <nav className="container flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-2.5 group" onClick={(e) => handleNavClick(e as any, "#home")}>
+      <nav className="container flex items-center h-16">
+        <Link to="/" className="flex items-center gap-2.5 group mr-auto" onClick={(e) => handleNavClick(e as any, "#home")}>
           <motion.img
             src={logo}
             alt="Curiosity Institute logo"
@@ -109,15 +109,9 @@ const Navbar = () => {
           })}
         </ul>
 
-        <div className="hidden md:block">
-          <Button asChild variant="hero" size="default">
-            <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>Contact Us</a>
-          </Button>
-        </div>
-
         <button
           aria-label="Toggle menu"
-          className="md:hidden w-10 h-10 grid place-items-center rounded-lg border border-border"
+          className="md:hidden w-10 h-10 grid place-items-center rounded-lg border border-border ml-auto"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -147,11 +141,6 @@ const Navbar = () => {
                 </li>
               );
             })}
-            <li className="pt-2">
-              <Button asChild variant="hero" className="w-full">
-                <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>Contact Us</a>
-              </Button>
-            </li>
           </ul>
         </motion.div>
       )}
