@@ -141,11 +141,6 @@ const Navbar = () => {
                 </li>
               );
             })}
-            <li className="pt-2">
-              <Button asChild variant="hero" className="w-full">
-                <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>Contact Us</a>
-              </Button>
-            </li>
           </ul>
         </motion.div>
       )}
