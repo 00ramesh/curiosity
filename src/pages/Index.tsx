@@ -1,9 +1,11 @@
 import Testimonials from "@/components/Testimonials";
 import FloatingDoodles from "@/components/FloatingDoodles";
 import Reveal from "@/components/Reveal";
+import ClassesSection from "@/components/sections/ClassesSection";
+import TeamSection from "@/components/sections/TeamSection";
+import ContactSection from "@/components/sections/ContactSection";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import {
   ArrowRight, BookOpen, Users, Award, Clock, Sparkles, Calculator,
   Atom, FlaskConical, Globe2, Languages, Microscope
