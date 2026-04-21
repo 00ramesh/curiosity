@@ -53,7 +53,8 @@ const Navbar = () => {
     } else {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-    history.replaceState(null, "", hash === "#home" ? "/" : hash);
+    const base = import.meta.env.BASE_URL ?? "/";
+    history.replaceState(null, "", hash === "#home" ? base : hash);
   };
 
   return (

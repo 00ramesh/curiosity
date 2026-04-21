@@ -14,7 +14,7 @@ import {
 const stats = [
   { value: "9+", label: "Years of Mentoring" },
   { value: "500+", label: "Happy Students" },
-  { value: "8", label: "Classes Covered" },
+  { value: "4", label: "Classes Covered" },
   { value: "4.9★", label: "Parent Rating" },
 ];
 
@@ -51,14 +51,15 @@ const Index = () => {
             </Reveal>
             <Reveal delay={0.1}>
               <h1 className="mt-6 text-5xl md:text-7xl font-extrabold leading-[1.05]">
-                Cultivating <span className="text-gradient-blue">Minds</span>,
-                <br />Harvesting <span className="text-gradient-blue">Future</span>
+                Curiosity <span className="text-gradient-blue">Institute</span>
+                <br />
+                Coaching for <span className="text-gradient-blue">Classes 9–12</span>
               </h1>
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
-                Modern coaching for classes 1–8 across all boards. Expert faculty,
-                personalised attention, regular tests and affordable fees.
+                Cultivating minds, harvesting future — with expert faculty, personalised attention,
+                regular tests, and doubt-solving support.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
@@ -221,7 +222,9 @@ const Index = () => {
             </div>
             <div className="relative">
               <h2 className="text-3xl md:text-5xl font-extrabold text-primary-foreground">Ready to begin the journey?</h2>
-              <p className="mt-4 text-primary-foreground/80 max-w-xl mx-auto">Talk to a mentor today. Admissions are open for all classes 1st to 8th.</p>
+              <p className="mt-4 text-primary-foreground/80 max-w-xl mx-auto">
+                Talk to a mentor today. Admissions are open for classes 9th to 12th.
+              </p>
               <div className="mt-8 flex flex-wrap gap-4 justify-center">
                 <Button asChild variant="amber" size="lg">
                   <a href="#contact">Apply Now <ArrowRight className="w-4 h-4" /></a>

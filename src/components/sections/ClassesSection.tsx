@@ -16,7 +16,7 @@ const ClassesSection = () => (
     <Reveal>
       <div className="max-w-2xl mx-auto text-center mb-14">
         <span className="inline-flex px-4 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-semibold uppercase tracking-wider">
-          Classes 1st to 8th · All Boards
+          Classes 9th to 12th · All Boards
         </span>
         <h2 className="mt-6 text-4xl md:text-5xl font-extrabold">Coaching <span className="text-gradient-blue">Classes</span></h2>
         <p className="mt-4 text-muted-foreground">Focused tracks — each course keeps just 4 key modules for clarity, pace and depth.</p>

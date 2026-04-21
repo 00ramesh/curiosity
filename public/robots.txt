@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://insidershiv.github.io/Curiosity/sitemap.xml
