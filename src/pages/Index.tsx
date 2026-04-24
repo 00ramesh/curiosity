@@ -4,6 +4,7 @@ import GalleryCarousel from "@/components/GalleryCarousel";
 import FloatingDoodles from "@/components/FloatingDoodles";
 import Reveal from "@/components/Reveal";
 import ClassesSection from "@/components/sections/ClassesSection";
+import BooksSection from "@/components/sections/BooksSection";
 import TeamSection from "@/components/sections/TeamSection";
 import ContactSection from "@/components/sections/ContactSection";
 import { Button } from "@/components/ui/button";
@@ -244,6 +245,7 @@ const Index = () => {
       </section>
 
       <ClassesSection />
+      <BooksSection />
       <TeamSection />
       <ContactSection />
     </>
