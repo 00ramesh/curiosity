@@ -1,17 +1,27 @@
+import FloatingDoodles from "@/components/FloatingDoodles";
+import GalleryCarousel from "@/components/GalleryCarousel";
+import Reveal from "@/components/Reveal";
+import BooksSection from "@/components/sections/BooksSection";
+import ClassesSection from "@/components/sections/ClassesSection";
+import ContactSection from "@/components/sections/ContactSection";
+import TeamSection from "@/components/sections/TeamSection";
 import Testimonials from "@/components/Testimonials";
 import TopperCarousel from "@/components/TopperCarousel";
-import GalleryCarousel from "@/components/GalleryCarousel";
-import FloatingDoodles from "@/components/FloatingDoodles";
-import Reveal from "@/components/Reveal";
-import ClassesSection from "@/components/sections/ClassesSection";
-import BooksSection from "@/components/sections/BooksSection";
-import TeamSection from "@/components/sections/TeamSection";
-import ContactSection from "@/components/sections/ContactSection";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
-  ArrowRight, BookOpen, Users, Award, Clock, Sparkles, Calculator,
-  Atom, FlaskConical, Globe2, Languages, Microscope
+  ArrowRight,
+  Atom,
+  Award,
+  BookOpen,
+  Calculator,
+  Clock,
+  FlaskConical,
+  Globe2,
+  Languages,
+  Microscope,
+  Sparkles,
+  Users,
 } from "lucide-react";
 
 const stats = [
@@ -22,10 +32,26 @@ const stats = [
 ];
 
 const features = [
-  { icon: BookOpen, title: "Offline Classes", desc: "Interactive sessions, experienced faculty, practical problem solving." },
-  { icon: Users, title: "Expert Mentors", desc: "Personal guidance to keep you motivated and on track." },
-  { icon: Award, title: "Curated Books", desc: "Concise study material and practice sets — only the essentials." },
-  { icon: Clock, title: "24/7 Support", desc: "Doubt resolution and progress tracking whenever you need it." },
+  {
+    icon: BookOpen,
+    title: "Offline Classes",
+    desc: "Interactive sessions, experienced faculty, practical problem solving.",
+  },
+  {
+    icon: Users,
+    title: "Expert Mentors",
+    desc: "Personal guidance to keep you motivated and on track.",
+  },
+  {
+    icon: Award,
+    title: "Curated Books",
+    desc: "Concise study material and practice sets — only the essentials.",
+  },
+  {
+    icon: Clock,
+    title: "24/7 Support",
+    desc: "Doubt resolution and progress tracking whenever you need it.",
+  },
 ];
 
 const subjects = [
@@ -41,7 +67,10 @@ const Index = () => {
   return (
     <>
       {/* HERO */}
-      <section id="home" className="relative min-h-screen flex items-center bg-hero overflow-hidden scroll-mt-20">
+      <section
+        id="home"
+        className="relative min-h-screen flex items-center bg-hero overflow-hidden scroll-mt-20"
+      >
         <FloatingDoodles />
         <div className="absolute inset-0 glow-ring" />
 
@@ -56,19 +85,23 @@ const Index = () => {
               <h1 className="mt-6 text-5xl md:text-7xl font-extrabold leading-[1.05]">
                 Curiosity <span className="text-gradient-blue">Institute</span>
                 <br />
-                Coaching for <span className="text-gradient-blue">Classes 9–12</span>
+                for{" "}
+                <span className="text-gradient-blue mt-10">Classes 6–12</span>
               </h1>
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
-                Cultivating minds, harvesting future — with expert faculty, personalised attention,
-                regular tests, and doubt-solving support.
+                Cultivating minds, harvesting future — with expert faculty,
+                personalised attention, regular tests, and doubt-solving
+                support.
               </p>
             </Reveal>
             <Reveal delay={0.3}>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Button asChild variant="hero" size="lg">
-                  <a href="#classes">Explore Classes <ArrowRight className="w-4 h-4" /></a>
+                  <a href="#classes">
+                    Explore Classes <ArrowRight className="w-4 h-4" />
+                  </a>
                 </Button>
                 <Button asChild variant="glass" size="lg">
                   <a href="#contact">Get in Touch</a>
@@ -77,13 +110,25 @@ const Index = () => {
             </Reveal>
             <Reveal delay={0.4}>
               <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 text-sm">
-                <a href="tel:8299281153" className="inline-flex items-center gap-2.5 text-foreground/90 hover:text-primary transition-colors">
-                  <span className="w-9 h-9 rounded-lg bg-primary/15 border border-primary/30 grid place-items-center text-primary">📞</span>
+                <a
+                  href="tel:8299281153"
+                  className="inline-flex items-center gap-2.5 text-foreground/90 hover:text-primary transition-colors"
+                >
+                  <span className="w-9 h-9 rounded-lg bg-primary/15 border border-primary/30 grid place-items-center text-primary">
+                    📞
+                  </span>
                   <span className="font-medium">8299281153</span>
                 </a>
-                <a href="mailto:institutecuriosity@gmail.com" className="inline-flex items-center gap-2.5 text-foreground/90 hover:text-primary transition-colors min-w-0">
-                  <span className="w-9 h-9 rounded-lg bg-primary/15 border border-primary/30 grid place-items-center text-primary">✉️</span>
-                  <span className="font-medium truncate">institutecuriosity@gmail.com</span>
+                <a
+                  href="mailto:institutecuriosity@gmail.com"
+                  className="inline-flex items-center gap-2.5 text-foreground/90 hover:text-primary transition-colors min-w-0"
+                >
+                  <span className="w-9 h-9 rounded-lg bg-primary/15 border border-primary/30 grid place-items-center text-primary">
+                    ✉️
+                  </span>
+                  <span className="font-medium truncate">
+                    institutecuriosity@gmail.com
+                  </span>
                 </a>
               </div>
             </Reveal>
@@ -104,10 +149,22 @@ const Index = () => {
               />
               <motion.div
                 animate={{ y: [0, -16, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="relative w-64 h-64 rounded-3xl bg-gradient-to-br from-primary to-primary-glow shadow-glow grid place-items-center"
               >
-                <svg viewBox="0 0 200 200" className="w-44 h-44 text-primary-foreground" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  viewBox="0 0 200 200"
+                  className="w-44 h-44 text-primary-foreground"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <motion.path
                     d="M30 50 Q100 20 170 50 L170 160 Q100 130 30 160 Z"
                     initial={{ pathLength: 0 }}
@@ -131,14 +188,22 @@ const Index = () => {
               {/* Floating pencil */}
               <motion.div
                 animate={{ y: [0, -20, 0], rotate: [-15, 5, -15] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute top-8 right-4 w-16 h-16 rounded-2xl bg-accent shadow-amber grid place-items-center"
               >
                 <span className="text-3xl">✏️</span>
               </motion.div>
               <motion.div
                 animate={{ y: [0, 18, 0], rotate: [10, -10, 10] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 7,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute bottom-6 left-2 w-16 h-16 rounded-2xl bg-card border border-primary/30 shadow-glow grid place-items-center"
               >
                 <span className="text-3xl">📚</span>
@@ -154,8 +219,12 @@ const Index = () => {
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.08}>
               <div className="bg-card-soft border border-border rounded-2xl p-6 text-center hover:border-primary/50 transition-all hover:-translate-y-1">
-                <div className="text-4xl font-extrabold text-gradient-blue">{s.value}</div>
-                <div className="mt-1 text-sm text-muted-foreground">{s.label}</div>
+                <div className="text-4xl font-extrabold text-gradient-blue">
+                  {s.value}
+                </div>
+                <div className="mt-1 text-sm text-muted-foreground">
+                  {s.label}
+                </div>
               </div>
             </Reveal>
           ))}
@@ -166,8 +235,12 @@ const Index = () => {
       <section className="container py-20">
         <Reveal>
           <div className="max-w-2xl mx-auto text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-extrabold">Why <span className="text-gradient-blue">Curiosity</span></h2>
-            <p className="mt-4 text-muted-foreground">Everything a young learner needs — under one roof.</p>
+            <h2 className="text-4xl md:text-5xl font-extrabold">
+              Why <span className="text-gradient-blue">Curiosity</span>
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Everything a young learner needs — under one roof.
+            </p>
           </div>
         </Reveal>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -182,7 +255,9 @@ const Index = () => {
                   <f.icon className="w-6 h-6 text-primary-foreground" />
                 </div>
                 <h3 className="mt-5 font-semibold text-lg">{f.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  {f.desc}
+                </p>
               </motion.div>
             </Reveal>
           ))}
@@ -193,8 +268,12 @@ const Index = () => {
       <section className="container py-20">
         <Reveal>
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-extrabold">Subjects We <span className="text-gradient-blue">Master</span></h2>
-            <p className="mt-4 text-muted-foreground">Math · Science · English · SST</p>
+            <h2 className="text-4xl md:text-5xl font-extrabold">
+              Subjects We <span className="text-gradient-blue">Master</span>
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Math · Science · English · SST
+            </p>
           </div>
         </Reveal>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -226,17 +305,26 @@ const Index = () => {
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary to-primary-glow p-10 md:p-16 text-center shadow-glow">
             <div className="absolute inset-0 opacity-20">
-              <div className="absolute top-10 left-10 text-6xl animate-float">📖</div>
-              <div className="absolute bottom-10 right-10 text-6xl animate-float-slow">✏️</div>
+              <div className="absolute top-10 left-10 text-6xl animate-float">
+                📖
+              </div>
+              <div className="absolute bottom-10 right-10 text-6xl animate-float-slow">
+                ✏️
+              </div>
             </div>
             <div className="relative">
-              <h2 className="text-3xl md:text-5xl font-extrabold text-primary-foreground">Ready to begin the journey?</h2>
+              <h2 className="text-3xl md:text-5xl font-extrabold text-primary-foreground">
+                Ready to begin the journey?
+              </h2>
               <p className="mt-4 text-primary-foreground/80 max-w-xl mx-auto">
-                Talk to a mentor today. Admissions are open for classes 9th to 12th.
+                Talk to a mentor today. Admissions are open for classes 9th to
+                12th.
               </p>
               <div className="mt-8 flex flex-wrap gap-4 justify-center">
                 <Button asChild variant="amber" size="lg">
-                  <a href="#contact">Apply Now <ArrowRight className="w-4 h-4" /></a>
+                  <a href="#contact">
+                    Apply Now <ArrowRight className="w-4 h-4" />
+                  </a>
                 </Button>
                 <Button asChild variant="glass" size="lg">
                   <a href="#team">Meet the Team</a>
