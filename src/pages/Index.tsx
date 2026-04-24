@@ -1,4 +1,5 @@
 import Testimonials from "@/components/Testimonials";
+import TopperCarousel from "@/components/TopperCarousel";
 import FloatingDoodles from "@/components/FloatingDoodles";
 import Reveal from "@/components/Reveal";
 import ClassesSection from "@/components/sections/ClassesSection";
@@ -208,6 +209,9 @@ const Index = () => {
           ))}
         </div>
       </section>
+
+      {/* TOPPERS */}
+      <TopperCarousel />
 
       {/* TESTIMONIALS */}
       <Testimonials />
