@@ -6,8 +6,10 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { useState, FormEvent } from "react";
 
-const PHONE = "8299281153";
+const PHONES = ["8299281153", "8787011905", "8840844774"] as const;
 const EMAIL = "institutecuriosity@gmail.com";
+const ADDRESS =
+  "N.15, BDS, VDA Colony, Badi Gaibi, Near Shitla Mata Temple, Mahmoorganj, Varanasi.";
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -33,15 +35,21 @@ const ContactSection = () => {
 
       <div className="grid lg:grid-cols-5 gap-8 items-stretch">
         <Reveal className="lg:col-span-2 flex flex-col gap-4 h-full">
-          <motion.a href={`tel:${PHONE}`} whileHover={{ y: -4 }} className="flex-1 flex items-center gap-4 bg-card-soft border border-border rounded-2xl p-5 hover:border-primary/50 transition-colors">
+          <motion.div whileHover={{ y: -4 }} className="flex-1 flex items-center gap-4 bg-card-soft border border-border rounded-2xl p-5 hover:border-primary/50 transition-colors">
             <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary-glow grid place-items-center shadow-glow flex-shrink-0">
               <Phone className="w-5 h-5 text-primary-foreground" />
             </div>
             <div>
               <div className="text-xs text-muted-foreground uppercase tracking-wider">Call us</div>
-              <div className="font-semibold text-lg">{PHONE}</div>
+              <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-sm font-semibold">
+                {PHONES.map((p) => (
+                  <a key={p} href={`tel:${p}`} className="hover:text-primary transition-colors">
+                    {p}
+                  </a>
+                ))}
+              </div>
             </div>
-          </motion.a>
+          </motion.div>
 
           <motion.a href={`mailto:${EMAIL}`} whileHover={{ y: -4 }} className="flex-1 flex items-center gap-4 bg-card-soft border border-border rounded-2xl p-5 hover:border-primary/50 transition-colors">
             <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary-glow grid place-items-center shadow-glow flex-shrink-0">
@@ -60,6 +68,7 @@ const ContactSection = () => {
             <div>
               <div className="text-xs text-muted-foreground uppercase tracking-wider">Visit</div>
               <div className="font-semibold">Curiosity Institute Campus</div>
+              <div className="mt-1 text-sm text-muted-foreground leading-relaxed">{ADDRESS}</div>
               <div className="text-sm text-muted-foreground">Mon–Sat · 9:00 AM – 7:00 PM</div>
             </div>
           </motion.div>
