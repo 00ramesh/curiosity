@@ -3,16 +3,24 @@ import { useRef } from "react";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Reveal from "@/components/Reveal";
 import { Camera, Sparkles } from "lucide-react";
-import gallery1 from "@/assets/gallery-inauguration-1.jpeg";
-import gallery2 from "@/assets/gallery-inauguration-2.jpeg";
-import gallery3 from "@/assets/gallery-inauguration-3.jpeg";
-import gallery4 from "@/assets/gallery-inauguration-4.jpeg";
+import gallery1 from "@/assets/1.jpeg";
+import gallery2 from "@/assets/2.jpeg";
+import gallery3 from "@/assets/3.jpeg";
+import gallery4 from "@/assets/4.jpeg";
+import gallery5 from "@/assets/5.jpeg";
+import gallery6 from "@/assets/6.jpeg";
+import gallery7 from "@/assets/7.jpeg";
+import gallery8Video from "@/assets/8.mp4";
 
 const photos = [
-  { img: gallery1, caption: "The Auspicious Beginning", tag: "Ribbon Cutting" },
-  { img: gallery2, caption: "Blessings & Gratitude", tag: "Pooja Ceremony" },
-  { img: gallery3, caption: "A Proud Moment", tag: "Founders" },
-  { img: gallery4, caption: "Welcoming a New Chapter", tag: "Inauguration Day" },
+  { media: "image" as const, src: gallery1, caption: "Curiosity moments", tag: "Gallery" },
+  { media: "image" as const, src: gallery2, caption: "Curiosity moments", tag: "Gallery" },
+  { media: "image" as const, src: gallery3, caption: "Curiosity moments", tag: "Gallery" },
+  { media: "image" as const, src: gallery4, caption: "Curiosity moments", tag: "Gallery" },
+  { media: "image" as const, src: gallery5, caption: "Curiosity moments", tag: "Gallery" },
+  { media: "image" as const, src: gallery6, caption: "Curiosity moments", tag: "Gallery" },
+  { media: "image" as const, src: gallery7, caption: "Curiosity moments", tag: "Gallery" },
+  { media: "video" as const, src: gallery8Video, caption: "Campus reel", tag: "Video" },
 ];
 
 const GalleryCarousel = () => {
@@ -51,12 +59,23 @@ const GalleryCarousel = () => {
                 <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3">
                   <div className="group relative rounded-3xl overflow-hidden border border-border bg-card-soft hover:border-primary/50 transition-all">
                     <div className="relative aspect-[3/4] overflow-hidden">
-                      <img
-                        src={p.img}
-                        alt={p.caption}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        loading="lazy"
-                      />
+                      {p.media === "image" ? (
+                        <img
+                          src={p.src}
+                          alt={p.caption}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <video
+                          src={p.src}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          muted
+                          loop
+                          playsInline
+                          autoPlay
+                        />
+                      )}
                       {/* Theme gradient overlays */}
                       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-accent/20 mix-blend-overlay" />

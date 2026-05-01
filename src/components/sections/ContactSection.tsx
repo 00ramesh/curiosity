@@ -5,6 +5,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { useState, FormEvent } from "react";
+import { toast } from "sonner";
+
+const WEB3FORMS_ACCESS_KEY =
+  import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ?? "39c0c0cf-2b6d-4dd5-a740-8918a9fcf93d";
 
 const PHONES = ["8299281153", "8787011905", "8840844774"] as const;
 const EMAIL = "institutecuriosity@gmail.com";
@@ -13,12 +17,37 @@ const ADDRESS =
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Enquiry from ${form.name}`);
-    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`);
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+    if (isSubmitting) return;
+
+    const formData = new FormData();
+    formData.append("name", form.name);
+    formData.append("email", form.email);
+    formData.append("message", form.message);
+    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = (await response.json()) as { success?: boolean };
+
+      if (data.success) {
+        setForm({ name: "", email: "", message: "" });
+        toast.success("Message sent. We’ll get back to you soon.");
+      } else {
+        toast.error("Could not send your message. Please try again.");
+      }
+    } catch {
+      toast.error("Network error. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -78,7 +107,7 @@ const ContactSection = () => {
           <form onSubmit={handleSubmit} className="h-full bg-card-soft border border-border rounded-3xl p-8 md:p-10 flex flex-col gap-5 shadow-soft">
             <div>
               <h3 className="text-2xl font-bold">Send a message</h3>
-              <p className="text-sm text-muted-foreground mt-1">Fill the form — it will open your email app pre-filled.</p>
+              <p className="text-sm text-muted-foreground mt-1">Fill the form — we’ll receive your message and reply as soon as we can.</p>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
@@ -95,7 +124,7 @@ const ContactSection = () => {
               <Textarea required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your child's class and what you're looking for..." className="bg-background/60 border-border flex-1 min-h-[160px] resize-none" />
             </div>
             <div className="flex flex-wrap gap-3 pt-2">
-              <Button type="submit" variant="hero" size="lg">
+              <Button type="submit" variant="hero" size="lg" disabled={isSubmitting}>
                 Send message <Send className="w-4 h-4" />
               </Button>
             </div>
