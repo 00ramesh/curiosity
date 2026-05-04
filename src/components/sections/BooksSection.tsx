@@ -5,14 +5,14 @@ type BookLink = { label: string; href: string };
 type BookGroup = { title: string; subtitle?: string; items: BookLink[] };
 
 const curated: { code: string; title: string; desc: string }[] = [
-  { code: "PS1", title: "Problem Solving Vol.1", desc: "Practice-first approach with solutions." },
+  { code: "PS", title: "Problem Solving", desc: "Practice-first approach with solutions." },
   { code: "CN", title: "Concept Notes", desc: "Concise theory with memory aids." },
   { code: "PP", title: "Practice Papers", desc: "Timed tests for exam readiness." },
   { code: "SM", title: "Speed Maths", desc: "Tricks and shortcuts to save time." },
 ];
 
 const ncertReferences: BookLink[] = [
-  { label: "Physics — NCERT (Class XI/XII)", href: "https://ncert.nic.in/textbook.php" },
+  { label: "Physics — NCERT (Class XI/XII)", href: "https://ncert.nic.in/textbook.php, " },
   { label: "Mathematics — NCERT (Class XI/XII)", href: "https://ncert.nic.in/textbook.php" },
   { label: "Chemistry — NCERT (Class XI/XII)", href: "https://ncert.nic.in/textbook.php" },
   { label: "Biology — NCERT (Class XI/XII)", href: "https://ncert.nic.in/textbook.php" },
@@ -22,35 +22,41 @@ const directLinks: BookGroup[] = [
   {
     title: "Physics",
     items: [
-      { label: "Class XI: NCERT Physics (Class XI)", href: "https://ncert.nic.in/textbook.php?keph1=0-8" },
-      { label: "Class XII: NCERT Physics (Class XII)", href: "https://ncert.nic.in/textbook.php?leph1=0-8" },
+      { label: "Class XI: NCERT Physics (Class XI Part 1)", href: "https://ncert.nic.in/textbook.php?keph1=0-8" },
+      { label: "Class XI: NCERT Physics (Class XI Part 2)", href: "https://ncert.nic.in/textbook.php?keph2=0-7" },
+      { label: "Class XII: NCERT Physics (Class XII Part 1)", href: "https://ncert.nic.in/textbook.php?leph1=0-8" },
+      { label: "Class XII: NCERT Physics (Class XII Part 2)", href: "https://ncert.nic.in/textbook.php?leph2=0-6" },
     ],
   },
   {
     title: "Mathematics",
     items: [
       { label: "Class XI: NCERT Mathematics (Class XI)", href: "https://ncert.nic.in/textbook.php?kemh1=0-16" },
-      { label: "Class XII: NCERT Mathematics (Class XII)", href: "https://ncert.nic.in/textbook.php?lemh1=0-13" },
+      { label: "Class XII: NCERT Mathematics (Class XII Part 1)", href: "https://ncert.nic.in/textbook.php?lemh1=0-13" },
+      { label: "Class XII: NCERT Mathematics (Class XII Part 2)", href: "https://ncert.nic.in/textbook.php?lemh2=0-12" },
     ],
   },
   {
     title: "Chemistry",
     items: [
       { label: "Class XI: NCERT Chemistry (Class XI)", href: "https://ncert.nic.in/textbook.php?kech1=0-14" },
-      { label: "Class XII: NCERT Chemistry (Class XII)", href: "https://ncert.nic.in/textbook.php?lech1=0-16" },
+      { label: "Class XII: NCERT Chemistry (Class XII Part 1)", href: "https://ncert.nic.in/textbook.php?lech1=0-16" },
+      { label: "Class XII: NCERT Chemistry (Class XII Part 2)", href: "https://ncert.nic.in/textbook.php?lech2=0-15" },
     ],
   },
   {
     title: "English",
     items: [
-      { label: "Class XI: NCERT English (Class XI)", href: "https://ncert.nic.in/textbook.php?kehc1=0-8" },
-      { label: "Class XII: NCERT English (Class XII)", href: "https://ncert.nic.in/textbook.php?lehc1=0-8" },
+      { label: "Class XI: NCERT English (Class XI : Hornbill)", href: "https://ncert.nic.in/textbook.php?kehb1=0-14" },
+      { label: "Class XI: NCERT English (Class XI : Snapshots (Supplementary Reader))", href: "https://ncert.nic.in/textbook.php?kesp1=0-5" },
+      { label: "Class XII: NCERT English (Class XII Flamingo (Prose and Poetry))", href: "https://ncert.nic.in/textbook.php?lefl1=0-13" },
+      { label: "Class XII: NCERT English (Class XII Vistas (Supplementary Reader))", href: "https://ncert.nic.in/textbook.php?levt1=0-6" },
     ],
   },
 ];
 
 const classes6to10 = [
-  { cls: "Class 6", subjects: "Maths · Science · English · Social Science · Hindi", href: "https://ncert.nic.in/textbook.php?fess1=0-12" },
+  { cls: "Class 6", subjects: "Maths · Science · English · Social Science · Hindi", href: "https://ncert.nic.in/textbook.php?fegp1=0-10," },
   { cls: "Class 7", subjects: "Maths · Science · English · Social Science · Hindi", href: "https://ncert.nic.in/textbook.php?gess1=0-10" },
   { cls: "Class 8", subjects: "Maths · Science · English · Social Science · Hindi", href: "https://ncert.nic.in/textbook.php?hess1=0-10" },
   { cls: "Class 9", subjects: "Maths · Science · English · Social Science · Hindi", href: "https://ncert.nic.in/textbook.php?iesc1=0-12" },
@@ -61,36 +67,49 @@ const classSubjects: BookGroup[] = [
   {
     title: "Class 6 Subjects",
     items: [
-      { label: "Mathematics", href: "https://ncert.nic.in/textbook.php?femh1=0-14" },
-      { label: "Science", href: "https://ncert.nic.in/textbook.php?fesc1=0-16" },
-      { label: "English", href: "https://ncert.nic.in/textbook.php?fehd1=0-10" },
-      { label: "Social Science", href: "https://ncert.nic.in/textbook.php?fess1=0-12" },
+      { label: "Mathematics : Ganita Prakash", href: "https://ncert.nic.in/textbook.php?fegp1=0-10" },
+      { label: "Science : Curiosity", href: "https://ncert.nic.in/textbook.php?fecu1=0-12" },
+      { label: "English : Poorvi", href: "https://ncert.nic.in/textbook.php?fepr1=0-5" },
+      { label: "Hindi : Malhar", href: "https://ncert.nic.in/textbook.php?fhml1=0-13" },
+      { label: "Social Science", href: "https://ncert.nic.in/textbook.php?fees1=0-14" },
+      { label: "Sanskrit : Deepakam", href: "https://ncert.nic.in/textbook.php?fsde1=0-16" },
+
     ],
   },
   {
     title: "Class 7 Subjects",
     items: [
-      { label: "Mathematics", href: "https://ncert.nic.in/textbook.php?gemh1=0-15" },
-      { label: "Science", href: "https://ncert.nic.in/textbook.php?gesc1=0-18" },
-      { label: "English", href: "https://ncert.nic.in/textbook.php?gehd1=0-10" },
-      { label: "Social Science", href: "https://ncert.nic.in/textbook.php?gess1=0-10" },
+      { label: "Mathematics : Ganita Prakash I", href: "https://ncert.nic.in/textbook.php?gegp1=0-8" },
+      { label: "Mathematics : Ganita Prakash II", href: "https://ncert.nic.in/textbook.php?gegp2=0-7" },
+      { label: "Science : Curiosity", href: "https://ncert.nic.in/textbook.php?gecu1=0-12" },
+      { label: "English : Poorvi", href: "https://ncert.nic.in/textbook.php?gepr1=0-5" },
+      { label: "Hindi : Malhar", href: "https://ncert.nic.in/textbook.php?ghml1=0-13" },
+      { label: "Social Science Part I", href: "https://ncert.nic.in/textbook.php?gees1=0-12" },
+      { label: "Social Science Part II", href: "https://ncert.nic.in/textbook.php?gees2=0-10" },
+      { label: "Sanskrit : Deepakam", href: "https://ncert.nic.in/textbook.php?gsde1=0-16" },
     ],
   },
   {
     title: "Class 8 Subjects",
     items: [
-      { label: "Mathematics", href: "https://ncert.nic.in/textbook.php?hemh1=0-16" },
-      { label: "Science", href: "https://ncert.nic.in/textbook.php?hesc1=0-18" },
-      { label: "English", href: "https://ncert.nic.in/textbook.php?hehd1=0-10" },
-      { label: "Social Science", href: "https://ncert.nic.in/textbook.php?hess1=0-10" },
+      { label: "Mathematics : Ganita Prakash I", href: "https://ncert.nic.in/textbook.php?hegp1=0-7" },
+      { label: "Mathematics : Ganita Prakash II", href: "https://ncert.nic.in/textbook.php?hegp2=0-7" },
+      { label: "Science : Curiosity", href: "https://ncert.nic.in/textbook.php?hecu1=0-18" },
+      { label: "English : Poorvi", href: "https://ncert.nic.in/textbook.php?hepr1=0-10" },
+      { label: "Hindi : Malhar", href: "https://ncert.nic.in/textbook.php?hhml1=0-13" },
+      { label: "Social Science Part I", href: "https://ncert.nic.in/textbook.php?hees1=0-7" },
+      { label: "Social Science Part II", href: "https://ncert.nic.in/textbook.php?hees2=0-7" },
+      { label: "Sanskrit : Deepakam", href: "https://ncert.nic.in/textbook.php?hsde1=0-16" },
     ],
   },
   {
     title: "Class 9 Subjects",
     items: [
-      { label: "Mathematics", href: "https://ncert.nic.in/textbook.php?iemh1=0-15" },
-      { label: "Science", href: "https://ncert.nic.in/textbook.php?iesc1=0-12" },
-      { label: "English", href: "https://ncert.nic.in/textbook.php?iebe1=0-10" },
+      { label: "Mathematics : Ganita Manjari", href: "https://ncert.nic.in/textbook.php?iemh1=0-15" },
+      { label: "Science : Exploration", href: "https://ncert.nic.in/textbook.php?iesc1=0-12" },
+      { label: "English : Kaveri", href: "https://ncert.nic.in/textbook.php?iebe1=0-10" },
+      { label: "Hindi : Ganga", href: "https://ncert.nic.in/textbook.php?ihga1=0-12" },
+      { label: "Sanskrit : Sharada", href: "https://ncert.nic.in/textbook.php?ihsh1=0-16" },
       { label: "Social Science", href: "https://ncert.nic.in/textbook.php?iess1=0-8" },
     ],
   },
@@ -101,8 +120,13 @@ const class10 : BookGroup = {
   items: [
     { label: "Mathematics", href: "https://ncert.nic.in/textbook.php?jemh1=0-15" },
     { label: "Science", href: "https://ncert.nic.in/textbook.php?jesc1=0-13" },
-    { label: "English", href: "https://ncert.nic.in/textbook.php?jefl1=0-11" },
+    { label: "English : First Flight", href: "https://ncert.nic.in/textbook.php?jeff1=0-9" },
+    { label: "English : Footprints without Feet", href: "https://ncert.nic.in/textbook.php?jefp1=0-9" },
+    { label: "Hindi : Kshitij", href: "https://ncert.nic.in/textbook.php?jhks1=0-12" },
+    { label: "Hindi : Kritika", href: "https://ncert.nic.in/textbook.php?jhkr1=0-3" },
     { label: "Social Science", href: "https://ncert.nic.in/textbook.php?jess3=0-8" },
+    { label: "Sanskrit : Shemushi", href: "https://ncert.nic.in/textbook.php?jhsk1=0-10" },
+    { label: "Sanskrit : Vyakaranavithi", href: "https://ncert.nic.in/textbook.php?jhva1=0-12" },
   ],
 };
 

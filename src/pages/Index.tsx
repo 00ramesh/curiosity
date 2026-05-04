@@ -91,7 +91,7 @@ const Index = () => {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
-                Cultivating minds, harvesting future — with expert faculty,
+                Cultivating Minds, Harvesting Future — with expert faculty,
                 personalised attention, regular tests, and doubt-solving
                 support.
               </p>
@@ -111,13 +111,13 @@ const Index = () => {
             <Reveal delay={0.4}>
               <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 text-sm">
                 <a
-                  href="tel:8299281153"
+                  href="tel:+918299281153"
                   className="inline-flex items-center gap-2.5 text-foreground/90 hover:text-primary transition-colors"
                 >
                   <span className="w-9 h-9 rounded-lg bg-primary/15 border border-primary/30 grid place-items-center text-primary">
                     📞
                   </span>
-                  <span className="font-medium">8299281153</span>
+                  <span className="font-medium">+918299281153</span>
                 </a>
                 <a
                   href="mailto:institutecuriosity@gmail.com"

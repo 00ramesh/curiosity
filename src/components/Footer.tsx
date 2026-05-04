@@ -33,7 +33,7 @@ const Footer = () => {
             <span className="font-bold text-lg">Curiosity Institute</span>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Cultivating minds, harvesting future. Modern coaching for classes
+            Cultivating Minds, Marvesting Future. Modern coaching for classes
             6–12, all boards.
           </p>
         </div>
@@ -76,14 +76,14 @@ const Footer = () => {
             <li className="flex items-start gap-2">
               <Phone className="w-4 h-4 mt-0.5 text-primary" />
               <div className="flex flex-col gap-1">
-                <a href="tel:8299281153" className="hover:text-primary transition-colors">
-                  8299281153
+                <a href="tel:+918299281153" className="hover:text-primary transition-colors">
+                  +91 8299281153
                 </a>
-                <a href="tel:8787011905" className="hover:text-primary transition-colors">
-                  8787011905
+                <a href="tel:+918787011905" className="hover:text-primary transition-colors">
+                  +91 8787011905
                 </a>
-                <a href="tel:8840844774" className="hover:text-primary transition-colors">
-                  8840844774
+                <a href="tel:+918840844774" className="hover:text-primary transition-colors">
+                  +91 8840844774
                 </a>
               </div>
             </li>
@@ -96,7 +96,7 @@ const Footer = () => {
               <div>
                 <div>Curiosity Institute Campus</div>
                 <div className="mt-1 text-xs leading-relaxed text-muted-foreground/90">
-                  N.15, BDS, VDA Colony, Badi Gaibi, Near Shitla Mata Temple, Mahmoorganj, Varanasi.
+                 Address: N.15, BDS, VDA Colony, Badi Gaibi, Near Shitla Mata Temple, Mahmoorganj, Varanasi.
                 </div>
               </div>
             </li>
@@ -136,6 +136,16 @@ const Footer = () => {
             >
               <Instagram className="w-4 h-4" />
             </a>
+                 <a
+              href="https://www.youtube.com/channel/UCgXj1-yLIbH3jc7Q9S7l7Zg"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="YouTube"
+              aria-label="YouTube"
+              className="w-10 h-10 grid place-items-center rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all hover:-translate-y-0.5"
+            >
+              <Youtube className="w-4 h-4" />
+            </a>
             <a
               href="https://twitter.com/curiosity_ins?ref_src=twsrc%5Etfw"
               target="_blank"
@@ -146,16 +156,7 @@ const Footer = () => {
             >
               <Twitter className="w-4 h-4" />
             </a>
-            <a
-              href="https://www.youtube.com/@Institute_Curiosity"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="YouTube"
-              aria-label="YouTube"
-              className="w-10 h-10 grid place-items-center rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all hover:-translate-y-0.5"
-            >
-              <Youtube className="w-4 h-4" />
-            </a>
+       
             <a
               href="https://bsky.app/profile/curiosityinstitute.bsky.social"
               target="_blank"

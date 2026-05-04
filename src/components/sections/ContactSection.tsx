@@ -10,10 +10,10 @@ import { toast } from "sonner";
 const WEB3FORMS_ACCESS_KEY =
   import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ?? "39c0c0cf-2b6d-4dd5-a740-8918a9fcf93d";
 
-const PHONES = ["8299281153", "8787011905", "8840844774"] as const;
+const PHONES = ["+918299281153", "+918787011905", "+918840844774"] as const;
 const EMAIL = "institutecuriosity@gmail.com";
 const ADDRESS =
-  "N.15, BDS, VDA Colony, Badi Gaibi, Near Shitla Mata Temple, Mahmoorganj, Varanasi.";
+  "Address: N-15, BDS, VDA Colony, Badi Gaibi, Near Shitla Mata Temple, Mahmoorganj, Varanasi.";
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -112,11 +112,11 @@ const ContactSection = () => {
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label className="text-sm font-medium mb-2 block">Your name</label>
-                <Input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Aarav Sharma" className="bg-background/60 border-border h-12" />
+                <Input required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Yudi" className="bg-background/60 border-border h-12" />
               </div>
               <div>
                 <label className="text-sm font-medium mb-2 block">Your email</label>
-                <Input required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="you@example.com" className="bg-background/60 border-border h-12" />
+                <Input required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="yudi@gmail.com" className="bg-background/60 border-border h-12" />
               </div>
             </div>
             <div className="flex-1 flex flex-col">

@@ -88,7 +88,7 @@ const GalleryCarousel = () => {
                       {/* Bottom caption */}
                       <div className="absolute inset-x-0 bottom-0 p-6">
                         <div className="text-xs text-primary/90 uppercase tracking-[0.2em] font-semibold">
-                          Curiosity · 2024
+                          Curiosity · 2026
                         </div>
                         <div className="mt-1.5 text-xl md:text-2xl font-extrabold leading-tight text-foreground drop-shadow-md">
                           {p.caption}

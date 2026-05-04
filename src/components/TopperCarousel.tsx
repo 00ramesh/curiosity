@@ -6,13 +6,13 @@ import { Trophy, Sparkles } from "lucide-react";
 import topperYastharth from "@/assets/topper-yastharth.jpeg";
 import topperRajnandini12 from "@/assets/topper-rajnandini-12.jpeg";
 import topperSachin from "@/assets/topper-sachin.jpeg";
-import topperRajnandini10 from "@/assets/topper-rajnandini-10.jpeg";
+import topperRajnandini10 from "@/assets/yasita.jpg";
 
 const toppers = [
   { img: topperYastharth, name: "Yastharth Pandey", roll: "23243171", className: "10th CBSE", percent: "80.1%" },
   { img: topperRajnandini12, name: "Raj Nandini Roy", roll: "14067285", className: "12th Commerce", percent: "95.8%" },
   { img: topperSachin, name: "Sachin Snehit", roll: "23245909", className: "10th CBSE", percent: "92.4%" },
-  { img: topperRajnandini10, name: "Raj Nandini Roy", roll: "23245905", className: "10th CBSE", percent: "95.8%" },
+  { img: topperRajnandini10, name: "Yasita Rai", roll: "23252759", className: "10th CBSE", percent: "87%" },
 ];
 
 const TopperCarousel = () => {
