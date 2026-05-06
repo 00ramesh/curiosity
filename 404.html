@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting…</title>
+    <script>
+      // GitHub Pages serves this file for unknown routes.
+      // Store the full URL and redirect to the project root so the SPA can load,
+      // then index.html restores the original URL from sessionStorage.
+      (function () {
+        sessionStorage.setItem("redirect", window.location.href);
+        var parts = window.location.pathname.split("/");
+        var repo = parts.length > 1 ? parts[1] : "";
+        var base = repo ? "/" + repo + "/" : "/";
+        window.location.replace(window.location.origin + base);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
