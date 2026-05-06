@@ -12,8 +12,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build && echo 'www.curiosityinstitute.in' > build/CNAME",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
