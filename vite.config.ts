@@ -4,8 +4,8 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Use project-base for GitHub Pages (username.github.io/repo)
-  base: "/curiosity/",
+  // Use root base for custom domain
+  base: "/",
   server: {
     host: "::",
     port: 8080,
