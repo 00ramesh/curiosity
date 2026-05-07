@@ -9,8 +9,8 @@ import topperSachin from "@/assets/topper-sachin.jpeg";
 import topperRajnandini10 from "@/assets/yasita.jpg";
 
 const toppers = [
+  { img: topperRajnandini12, name: "Raj Nandini Roy", roll: "14067285", className: "10th CBSE", percent: "95.8%" },
   { img: topperYastharth, name: "Yastharth Pandey", roll: "23243171", className: "10th CBSE", percent: "80.1%" },
-  { img: topperRajnandini12, name: "Raj Nandini Roy", roll: "14067285", className: "12th Commerce", percent: "95.8%" },
   { img: topperSachin, name: "Sachin Snehit", roll: "23245909", className: "10th CBSE", percent: "92.4%" },
   { img: topperRajnandini10, name: "Yasita Rai", roll: "23252759", className: "10th CBSE", percent: "87%" },
 ];
