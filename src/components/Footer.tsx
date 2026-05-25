@@ -33,7 +33,7 @@ const Footer = () => {
             <span className="font-bold text-lg">Curiosity Institute</span>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Cultivating Minds, Marvesting Future. Modern coaching for classes
+            Cultivating Minds, Harvesting Future. Modern coaching for classes
             6–12, all boards.
           </p>
         </div>
